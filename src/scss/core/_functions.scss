@@ -1,0 +1,9 @@
+@function strip-units($number) {
+	@return $number / ($number * 0 + 1);
+ }
+
+ 				/*TEST*/
+.r {
+	width: strip-units(200px);
+	height: strip-units(20rem);
+}

@@ -1,0 +1,51 @@
+@import "./header.scss";
+@import "./footer.scss";
+@import "core/fonts";
+@import "core/variables";
+@import "core/mixin";
+@import "core/reset";
+@import "core/functions";
+
+.container {
+  max-width: $containerWidth;
+  padding: 0 $offset;
+  margin: 0 auto;
+  // width: 100%;
+}
+
+.row {
+  margin: 0 #{-$offset};
+  // display: flex;
+  // flex-wrap: wrap;
+}
+
+.col {
+  padding: 0 $offset;
+  // position:relative;
+  // width:100%;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: 100% / 12 * $i;
+  }
+}
+
+@each $display in $displays {
+  .d-#{$display} {
+    display: $display;
+  }
+}
+
+@each $position in $positions {
+  .p-#{$position} {
+    position: $position;
+  }
+}
